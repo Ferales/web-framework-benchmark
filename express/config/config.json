@@ -1,0 +1,26 @@
+{
+  "development": {
+    "username": "test",
+    "password": "test",
+    "database": "performance_test",
+    "host": "postgres",
+    "dialect": "postgres",
+    "logging": false
+  },
+  "test": {
+    "username": "test",
+    "password": "test",
+    "database": "performance_test",
+    "host": "postgres",
+    "dialect": "postgres",
+    "logging": false
+  },
+  "production": {
+    "username": "test",
+    "password": "test",
+    "database": "performance_test",
+    "host": "postgres",
+    "dialect": "postgres",
+    "logging": false
+  }
+}

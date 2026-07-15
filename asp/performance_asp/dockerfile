@@ -1,0 +1,32 @@
+# ======================
+# Build stage
+# ======================
+FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
+
+WORKDIR /src
+
+COPY . .
+
+WORKDIR /src/performance_asp
+
+RUN dotnet restore performance_asp.csproj
+
+RUN dotnet publish performance_asp.csproj \
+    -c Release \
+    -o /app/publish \
+    --no-restore
+
+# ======================
+# Runtime stage
+# ======================
+FROM mcr.microsoft.com/dotnet/aspnet:8.0
+
+WORKDIR /app
+
+COPY --from=build /app/publish .
+
+ENV ASPNETCORE_URLS=http://+:5281
+
+EXPOSE 5281
+
+ENTRYPOINT ["dotnet", "performance_asp.dll"]

@@ -1,0 +1,13 @@
+asgiref==3.11.1
+Django==6.0.7
+django-db-connection-pool==1.2.6
+djangorestframework==3.17.1
+djangorestframework_simplejwt==5.5.1
+greenlet==3.5.3
+psycopg2-binary==2.9.12
+PyJWT==2.13.0
+SQLAlchemy==2.0.51
+sqlparams==6.2.0
+sqlparse==0.5.5
+typing_extensions==4.16.0
+tzdata==2026.2

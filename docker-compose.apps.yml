@@ -1,0 +1,34 @@
+version: "3.8"
+
+services:
+
+  aspnet:
+    build:
+      context: ./asp/performance_asp
+    container_name: performance-asp
+    ports:
+      - "5281:5281"
+    networks:
+      - benchmark-network
+
+  express:
+    build:
+      context: ./express
+    container_name: performance-express
+    ports:
+      - "3000:3000"
+    networks:
+      - benchmark-network
+
+  django:
+    build:
+      context: ./django
+    container_name: performance-django
+    ports:
+      - "8000:8000"
+    networks:
+      - benchmark-network
+
+networks:
+  benchmark-network:
+    external: true
